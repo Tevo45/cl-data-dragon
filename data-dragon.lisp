@@ -27,8 +27,8 @@
 
 (defmethod get-champ-by-name ((client data-dragon-client) name)
   (with-slots (language source) client
-    (cdr (assoc :data
-		(get-data source language (list "champion" name))))))
+    (cdadr (assoc :data
+		  (get-data source language (list "champion" name))))))
 
 (defmethod get-champ-name-by-key ((client data-dragon-client) key)
   (with-slots (champ-key->name-table) client
